@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 export default function RootLayout(){
   return (
     <div className="flex h-screen">
-      <div className="w-64 bg-gray-800 text-white">
+      <div className="w-64 bg-white text-gray-800 border-r border-gray-300">
         <Sidebar />
       </div>
 
