@@ -7,7 +7,7 @@ export default function ChatPage() {
     <div className="flex h-full flex-col">
       <div className="flex-1 overflow-y-auto p-4">
         <p className="text-gray-500">Chat ID: {chatId}</p>
-        {/* Daftar pesan chat di sini */}
+        
       </div>
       <div className="border-t p-4">
         <input

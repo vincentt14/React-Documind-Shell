@@ -13,7 +13,7 @@ export default function MainPage() {
           <p className="text-gray-500">Drop your files here or click to browse</p>
         </div>
 
-        <button className="mt-5 rounded-xl bg-cyan-700 px-4 py-2 text-white hover:bg-cyan-800 hover:shadow-lg">
+        <button className="cursor-pointer mt-5 rounded-xl bg-cyan-700 px-4 py-2 text-white hover:bg-cyan-800 hover:shadow-lg">
           Process
         </button>
       </div>
