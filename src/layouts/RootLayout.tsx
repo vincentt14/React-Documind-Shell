@@ -16,16 +16,17 @@ export default function RootLayout() {
 
       <div className={`flex-1 relative ${theme === "light" ? "bg-gray-50" : "bg-[#262626]"}`}>
         <div
-          className={`absolute top-0 right-0 m-4 px-4 h-10 flex items-center justify-end rounded-lg shadow-md border transition 
+          className={`cursor-pointer absolute top-0 right-0 m-4 px-4 h-10 flex items-center justify-end rounded-lg shadow-md border transition 
           ${theme === "light" ? "bg-white border-gray-300 text-gray-800" : "bg-[#1F1F1F] border-gray-700 text-gray-200"}`}
+          onClick={toggleTheme}
         >
-          <button onClick={toggleTheme} className="p-2 rounded-md hover:scale-110 transition-all">
-            {theme === "light" ? <MdDarkMode className="text-gray-700 w-5 h-5" /> : <MdLightMode className="text-white w-5 h-5" />}
-          </button>
+          <button className="p-2 rounded-md hover:scale-110 transition-all">{theme === "light" ? <MdDarkMode className="text-gray-700 w-5 h-5" /> : <MdLightMode className="text-white w-5 h-5" />}</button>
         </div>
 
-        <div className="w-full h-full overflow-auto p-6">
-          <Outlet />
+        <div className="flex-1 h-full overflow-hidden">
+          <div className="w-full h-full overflow-y-auto p-6">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

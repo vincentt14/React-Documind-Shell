@@ -29,7 +29,7 @@ export default function ChatList({ messages }: ChatListProps) {
               theme === "light"
                 ? msg.role === "user"
                   ? "bg-gray-100 text-black max-w-[75%] border border-gray-300"
-                  : "max-w-full text-white"
+                  : "max-w-full text-black"
                 : msg.role === "user"
                 ? "bg-[#1F1F1F] text-white max-w-[75%] border border-gray-600"
                 : "max-w-full text-white"
