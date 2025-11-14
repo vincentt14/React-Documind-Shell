@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
 import idmLogo from "../assets/logo_indomaret.png";
 
 export default function LoginPage() {
+  const { theme } = useTheme();
   const { login } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -15,15 +17,16 @@ export default function LoginPage() {
       login(username);
       navigate("/uploadDocument");
     } else {
+      ("");
       alert("Invalid credentials");
     }
   };
 
-  const inputClassName = "w-full rounded-lg border border-gray-300 bg-white p-2.5 focus-within:ring-2 focus-within:ring-cyan-600 transition focus:outline-none";
+  const inputClassName = `w-full rounded-lg border p-2.5 focus-within:ring-2 transition focus:outline-none ${theme === "light" ? "bg-white border-gray-300 focus-within:ring-cyan-600" : "bg-[#1F1F1F] border-gray-600 focus-within:ring-cyan-500"}`;
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg">
+    <div className={`flex h-screen items-center justify-center ${theme === "light" ? "bg-gray-100 text-black" : "bg-[#262626] text-white"}`}>
+      <div className={`w-full max-w-sm rounded-xl p-8 shadow-lg ${theme === "light" ? "bg-white" : "bg-[#1F1F1F]"}`}>
         <img src={idmLogo} alt="Indomaret" className="mb-4 mx-auto max-w-[250px] w-full h-auto object-contain" />
 
         <h1 className="mb-4 text-center text-3xl font-bold">Login</h1>
