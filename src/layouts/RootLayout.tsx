@@ -23,8 +23,8 @@ export default function RootLayout() {
           <button className="p-2 rounded-md hover:scale-110 transition-all">{theme === "light" ? <MdDarkMode className="text-gray-700 w-5 h-5" /> : <MdLightMode className="text-white w-5 h-5" />}</button>
         </div>
 
-        <div className="flex-1 h-full overflow-hidden">
-          <div className="w-full h-full overflow-y-auto p-6">
+        <div className="flex-1 h-full overflow-hidden overflow-x-hidden">
+          <div className="w-full h-full overflow-y-auto overflow-x-hidden p-6">
             <Outlet />
           </div>
         </div>
